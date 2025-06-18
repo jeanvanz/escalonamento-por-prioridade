@@ -7,7 +7,7 @@
 - Jean Folle Vanz
 - Otávio Augusto Lorenzatto
 
-## :pushpin: Objetivo (Breve descrição do projeto e algoritmos simulados)
+## :pushpin: Objetivo 
 O objetivo deste projeto é apresentar uma simulação de algoritmo de escalonamento por prioridade em Java. Ele é um algoritmo fundamental em sistemas operacionais, onde cada processo recebe uma prioridade, e o processo com a maior prioridade é executado primeiro.
 
 ## 📼 Link para o vídeo da equipe apresentando o trabalho
