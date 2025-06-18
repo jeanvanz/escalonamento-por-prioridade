@@ -1,7 +1,8 @@
-import java.util.List;
 import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.List;
 
+// Classe que representa um processo
 class ProcessoPreemptivo {
     String nome;
     int tempoExecucao;
@@ -19,9 +20,12 @@ class ProcessoPreemptivo {
 }
 
 public class EscalonamentoPorPrioridadePreemptivo {
-
     public static void main(String[] args) {
+
+        // Cria uma lista de processos
         List<ProcessoPreemptivo> processos = new ArrayList<>();
+        // Adiciona processos à lista com nome, tempo de execução, prioridade e tempo de chegada
+
         processos.add(new ProcessoPreemptivo("P1", 5, 3, 0));
         processos.add(new ProcessoPreemptivo("P2", 3, 1, 2));
         processos.add(new ProcessoPreemptivo("P3", 8, 4, 4));
@@ -29,7 +33,8 @@ public class EscalonamentoPorPrioridadePreemptivo {
         processos.add(new ProcessoPreemptivo("P5", 2, 5, 12));
         processos.add(new ProcessoPreemptivo("P6", 7, 1, 10));
 
-        List<ProcessoPreemptivo> esperandoExecucao = new ArrayList<>();
+        // Lista de processos prontos para executar, mas ainda aguardando
+        List<ProcessoPreemptivo> esperandoExecucao = new ArrayList<>(); 
         ProcessoPreemptivo processoAtual = null;
         int tempoAtual = 0;
 
@@ -37,6 +42,7 @@ public class EscalonamentoPorPrioridadePreemptivo {
 
         while (!processos.isEmpty() || processoAtual != null || !esperandoExecucao.isEmpty()) {
 
+            // Verifica chegada de novos processos
             Iterator<ProcessoPreemptivo> it = processos.iterator();
             while (it.hasNext()) {
                 ProcessoPreemptivo p = it.next();
@@ -48,6 +54,7 @@ public class EscalonamentoPorPrioridadePreemptivo {
                 }
             }
 
+            // Seleciona o processo de maior prioridade (menor número)
             if (!esperandoExecucao.isEmpty()) {
                 ProcessoPreemptivo maisPrioritario = null;
                 for (ProcessoPreemptivo p : esperandoExecucao) {
@@ -56,29 +63,26 @@ public class EscalonamentoPorPrioridadePreemptivo {
                     }
                 }
 
+                // Preemptivo: troca o processo atual se houver outro com prioridade maior
                 if (processoAtual == null || maisPrioritario.prioridade < processoAtual.prioridade) {
                     if (processoAtual != null) {
-                        System.out.println(
-                                "Tempo " + tempoAtual + ": Processo " + processoAtual.nome + " foi pausado");
+                        System.out.println("Tempo " + tempoAtual + ": Processo " + processoAtual.nome + " foi pausado");
                         esperandoExecucao.add(processoAtual);
                     }
                     processoAtual = maisPrioritario;
                     esperandoExecucao.remove(maisPrioritario);
-                    System.out.println(
-                            "Tempo " + tempoAtual + ": Processo " + processoAtual.nome + " começou a executar");
+                    System.out.println("Tempo " + tempoAtual + ": Processo " + processoAtual.nome + " começou a executar");
                 }
             }
 
+            // Verifica se há um processo em execução, se sim ele libera a CPU para outro processo
             if (processoAtual != null) {
                 processoAtual.tempoRestante--;
-
                 if (processoAtual.tempoRestante == 0) {
-                    System.out
-                            .println("Tempo " + (tempoAtual + 1) + ": Processo " + processoAtual.nome + " finalizado");
+                    System.out.println("Tempo " + (tempoAtual + 1) + ": Processo " + processoAtual.nome + " finalizado");
                     processoAtual = null;
                 }
             }
-
             tempoAtual++;
         }
     }
