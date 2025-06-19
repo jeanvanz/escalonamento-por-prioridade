@@ -59,7 +59,7 @@ Nesse caso, não é necessário compilar com javac previamente.
 
 📌 Escalonamento por Prioridade Não Preemptivo
 
-No código de escalonamento por prioridade não preemptivo, é adicionado os processos com (nome, tempo de execução e prioridade) a uma lista, após, com o uso do .sort, eh ordenado de forma crescente referente a prioridade (menor número = maior prioridade).
+No código de escalonamento por prioridade não preemptivo, é adicionado os processos com (nome, tempo de execução e prioridade) a uma lista, após, com o uso do .sort, é ordenado de forma crescente referente a prioridade (menor número = maior prioridade).
 
 🧠 Observações da Execução:
 
@@ -74,7 +74,7 @@ No código de escalonamento por prioridade não preemptivo, é adicionado os pro
 
 📌 Escalonamento por Prioridade Preemptivo 
 
-Ja no escalonamento por prioridade preemptivo, os processos podem chegar dinamicamente ao sistema, nesse caso, foi criado uma lista apenas para uma forma de simulação com (nome, tempo de execução, prioridade e tempo de chegada), no escalonamento por prioridade, se le linha por linha, mas não que seja assim para executar esses processos, pois sao executados e em seguida vem algum processo com prioridade maior, o processo com prioridade menor fica esperando ate chegar no nível de sua prioridade, nesse caso:
+Ja no escalonamento por prioridade preemptivo, os processos podem chegar dinamicamente ao sistema, nesse caso, foi criado uma lista apenas para uma forma de simulação com (nome, tempo de execução, prioridade e tempo de chegada), no escalonamento por prioridade, se le linha por linha, mas não que seja assim para executar esses processos, pois são executados e em seguida vem algum processo com prioridade maior, o processo com prioridade menor fica esperando ate chegar no nível de sua prioridade, nesse caso:
 
 🧠 Observações da Execução:
 
