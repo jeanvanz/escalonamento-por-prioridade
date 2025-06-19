@@ -11,6 +11,7 @@
 O objetivo deste projeto é apresentar uma simulação de algoritmo de escalonamento por prioridade em Java. Ele é um algoritmo fundamental em sistemas operacionais, onde cada processo recebe uma prioridade, e o processo com a maior prioridade é executado primeiro.
 
 ## 📼 Link para o vídeo da equipe apresentando o trabalho
+https://drive.google.com/file/d/1pXCkUXcUUTBvyPNvEtzXoTn9gGNXN_6f/view?usp=sharing
 
 ## ✍️ Como executar o projeto
 
