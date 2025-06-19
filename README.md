@@ -30,14 +30,14 @@ cd escalonamento-por-prioridade
 
 ```
 
-Escalonamento por prioridade não-preemptivo
+Escalonamento por prioridade não-preemptivo:
 
 ```bash
 javac EscalonamentoPorPrioridadeNaoPreemptivo.java
 java EscalonamentoPorPrioridadeNaoPreemptivo
 ```
 
-Escalonamento por prioridade preemptivo
+Escalonamento por prioridade preemptivo:
 
 ```bash
 javac EscalonamentoPorPrioridadePreemptivo.java
