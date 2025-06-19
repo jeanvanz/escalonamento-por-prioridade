@@ -22,13 +22,12 @@ public class EscalonamentoPorPrioridadeNaoPreemptivo {
         List<ProcessoNaoPreemptivo> processos = new ArrayList<>();
 
         // Adiciona processos à lista com nome, tempo de execução e prioridade
-        processos.add(new ProcessoNaoPreemptivo("P1", 5, 2));
+        processos.add(new ProcessoNaoPreemptivo("P1", 5, 3));
         processos.add(new ProcessoNaoPreemptivo("P2", 3, 1));
-        processos.add(new ProcessoNaoPreemptivo("P17", 8, 4));
-        processos.add(new ProcessoNaoPreemptivo("P6", 6, 3));
-        processos.add(new ProcessoNaoPreemptivo("P7", 2, 5));
-        processos.add(new ProcessoNaoPreemptivo("P22", 7, 6));
-        processos.add(new ProcessoNaoPreemptivo("P8", 1, 1));
+        processos.add(new ProcessoNaoPreemptivo("P3", 8, 4));
+        processos.add(new ProcessoNaoPreemptivo("P4", 6, 2));
+        processos.add(new ProcessoNaoPreemptivo("P5", 2, 5));
+        processos.add(new ProcessoNaoPreemptivo("P6", 7, 1));
 
         // Ordena a lista de processos com base na prioridade (menor número = maior prioridade)
         processos.sort(Comparator.comparingInt(p -> p.prioridade));
